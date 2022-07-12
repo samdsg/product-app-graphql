@@ -26,7 +26,7 @@ Product Lists are grouped by date and each product displays
 
 ### Installation & Usage
 
-1 Clone from GitHub `https://github.com/samdsg/product-app-grapql.git`
+1 Clone from GitHub `https://github.com/samdsg/product-app-graphql.git`
 2 Run `npm install` on the root folder and client folder from your cli
 3 Run `npm run dev` on the root folder to start the project
 
