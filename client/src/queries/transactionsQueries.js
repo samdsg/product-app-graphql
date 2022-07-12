@@ -4,10 +4,8 @@ import { gql } from "@apollo/client";
 const GET_TRANSACTIONS = gql`
   query getTransactions {
     transactions {
-      id
       dateAdded
       products {
-        id
         title
         description
         price

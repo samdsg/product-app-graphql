@@ -13,7 +13,7 @@ const Product = ({ dateAdded, products }) => {
       key={products}
     >
       <div className="mb-3 border w-24">
-        <h1 className="font-bold text-sm whitespace-nowrap bg-red-200 capitalize">
+        <h1 className="font-bold text-sm whitespace-nowrap bg-red-200 capitalize p-2">
           {dateAdded}
         </h1>
       </div>

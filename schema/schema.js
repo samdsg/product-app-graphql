@@ -9,7 +9,7 @@ const {
   GraphQLNonNull,
 } = require("graphql");
 
-/* Mongoos modesl */
+/* Mongoose modesl */
 const Product = require("../models/Product");
 const TransactionDate = require("../models/TransactionDate");
 
@@ -54,7 +54,10 @@ const TransactionDateType = new GraphQLObjectType({
       type: new GraphQLList(ProductType),
       async resolve(parent, args) {
         // return products.filter((p) => p.dateAdded === parent.dateAdded);
-        return await Product.find({ dateAdded: parent.dateAdded });
+        const products = await Product.find();
+        return products.filter(
+          (product) => product.dateAdded === parent.dateAdded
+        );
       },
     },
   }),
@@ -91,7 +94,10 @@ const RootQuery = new GraphQLObjectType({
       args: { filter: { type: GraphQLString } },
       async resolve(parent, args) {
         const { filter } = args;
-        const productsByCategory = await Product.find({ category: filter });
+        const products = await Product.find();
+        const productsByCategory = products.filter(
+          (product) => product.category === filter
+        );
         let grouped_by_date = _.groupBy(productsByCategory, "dateAdded");
         let dates = Object.keys(grouped_by_date);
         let allProducts = dates.map((dateAdded, id) => ({

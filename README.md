@@ -2,13 +2,13 @@
 
 ### Overview
 
-Hey!, welcome to the product list transaction app. This project displays mock data grouped by dates of transaction.
+Hey!, welcome to the product list transaction app. This project displays mock data for products grouped by dates of transaction.
 
-A filter category group buttons at the top level, if clicked returns the products in the category, grouped by the date of transaction.
+A filter category group button(s) at the top level, if clicked returns the products in that category, grouped by the dates of transaction.
 
 There is a top level search bar component to help users search products, but doesn't work currently.
 
-Product Lists is grouped by date and each product displays
+Product Lists are grouped by date and each product displays
 
 - id (not displayed on the frontend)
 - title
@@ -30,9 +30,14 @@ Product Lists is grouped by date and each product displays
 2 Run `npm install` on the root folder and client folder from your cli
 3 Run `npm run dev` on the root folder to start the project
 
-### GraphQl Queries
+### Suggestions
 
-Graphql Queries are used to retreive data from the Backend. Below are queries used
+- UI Design can be improved to reduce the data displayed by Using Accordion Dropdowns for each date groups containing products.
+- Search component should work to query products faster.
+- App only retrieves data, making it a complete CRUD App can increase interaction and keep users.
+- UI is focused on mobile viewports but can be improved with a beautiful design for different screens.
+
+### Graphql Queries
 
 ```graphql
 {
@@ -69,15 +74,40 @@ Graphql Queries are used to retreive data from the Backend. Below are queries us
 ```graphql
 {
   category(filter: "phones") {
-    # list of product with same category filter keyord
+    # list of product with same category filter keyword
     id # category unique id
-    dateAdded # date used for group data return from productlist
+    dateAdded # date used for group data return from product list
     products #product list of same category
   }
 }
 ```
 
-_All the above queries works perfect -> `http://localhost:5000/graphql`_.
+```graphql
+mutation {
+  addProduct(
+    title: "Title"
+    description: "description"
+    dateAdded: "date(ISO)"
+    price: "price"
+    category: "category name"
+  ) {
+    id
+    title
+    description
+    dateAdded
+  }
+}
+```
+
+```graphql
+mutation {
+  addTransaction(dateAdded: "date") {
+    dateAdded
+  }
+}
+```
+
+_All the above queries works -> `http://localhost:5000/graphql`_.
 
 #### Reference(s)
 
@@ -86,3 +116,7 @@ _All the above queries works perfect -> `http://localhost:5000/graphql`_.
 [How to use GraphQl Custom Scalar from Egghead.io](https://egghead.io/lessons/apollo-define-a-custom-scalar-type-for-a-graphql-api)
 
 [Creating a custom DateTime scalar type 11 - Adonis Masterey](https://www.youtube.com/watch?v=kvJuHGUNqww)
+
+```
+
+```

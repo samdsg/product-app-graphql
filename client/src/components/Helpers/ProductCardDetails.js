@@ -4,7 +4,7 @@ const ProductCardDetails = ({ title, description, price, category }) => (
       <div className="w-1/4 border mr-5 p-2 text-sm break-words bg-green-100 font-bold">
         Title
       </div>
-      <div className="w-3/4 border bg-blue-200 p-2 text-sm">{title}</div>
+      <div className="w-3/4 border bg-blue-200 p-2 text-sm font-bold">{title}</div>
     </li>
     <li className="flex items-center">
       <div className="w-1/4 border mr-5 p-2 text-sm break-words bg-green-100 font-bold">
