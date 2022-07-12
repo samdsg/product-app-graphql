@@ -116,7 +116,3 @@ _All the above queries works -> `http://localhost:5000/graphql`_.
 [How to use GraphQl Custom Scalar from Egghead.io](https://egghead.io/lessons/apollo-define-a-custom-scalar-type-for-a-graphql-api)
 
 [Creating a custom DateTime scalar type 11 - Adonis Masterey](https://www.youtube.com/watch?v=kvJuHGUNqww)
-
-```
-
-```
